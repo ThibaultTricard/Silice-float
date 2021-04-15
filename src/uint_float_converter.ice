@@ -1,3 +1,6 @@
+$$if UINT_TO_FLOAT == nil then
+$$UINT_TO_FLOAT = 1
+
 algorithm uint$uint_size$_to_float(input uint$uint_size$ i, output uint$float_size$ f){
     uint1 s :=0;
     uint$exponant_size$ exponant = 0;
@@ -8,6 +11,10 @@ algorithm uint$uint_size$_to_float(input uint$uint_size$ i, output uint$float_si
             mantissa = {i[0,$i$], $mantissa_size-i$d0};
         } else {
     $$end
+        if(i[0,1]){
+            exponant = {1b1, $exponant_size-1$d$0$} -1;
+            mantissa = 0;
+        }
     $$for i=0,uint_size-2 do
         }
     $$end
@@ -30,3 +37,6 @@ algorithm float_to_uint$uint_size$(input uint$float_size$ f, output uint$uint_si
         $$end   
     }
 }
+
+
+$$end
