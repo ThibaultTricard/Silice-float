@@ -2,7 +2,7 @@
 Customizable floating point number lib for the Silice FPGA language
 
 # Features
-uint to float convertion
-float to uint convertion
-float addition
-float multiplication
+- uint to float
+- float to uint
+- float addition
+- float multiplication
