@@ -2,7 +2,7 @@ $$if UINT_TO_FLOAT == nil then
 $$UINT_TO_FLOAT = 1
 
 algorithm uint_to_float(input uint$uint_size$ u, output uint$float_size$ f){
-    uint1 s :=0;
+    uint1 s <: 0;
     uint$exponant_size$ exponant = 0;
     uint$mantissa_size$ mantissa = 0;
     $$for i=uint_size-1,1,-1 do
@@ -37,8 +37,8 @@ algorithm uint_to_float(input uint$uint_size$ u, output uint$float_size$ f){
 
 //equivalent to a ceil
 algorithm float_to_uint(input uint$float_size$ f, output uint$uint_size$ u){
-    uint$exponant_size$ one_exponent := {1b1,$exponant_size-1$b0};
-    uint$exponant_size$ exponant := f[$mantissa_size$, $exponant_size$] + 1;
+    uint$exponant_size$ one_exponent <: {1b1,$exponant_size-1$b0};
+    uint$exponant_size$ exponant <: f[$mantissa_size$, $exponant_size$] + 1;
     u = 0;
 
     if(f[$float_size-1$, 1] ){

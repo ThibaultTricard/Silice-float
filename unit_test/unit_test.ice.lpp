@@ -74,7 +74,7 @@ bitfield float{
 
 
 algorithm uint_to_float(input uint32 u, output uint32 f){
-    uint1 s :=0;
+    uint1 s <: 0;
     uint8 exponant = 0;
     uint23 mantissa = 0;
         if(u[31,1]){
@@ -397,8 +397,8 @@ algorithm uint_to_float(input uint32 u, output uint32 f){
 
 //equivalent to a ceil
 algorithm float_to_uint(input uint32 f, output uint32 u){
-    uint8 one_exponent := {1b1,7b0};
-    uint8 exponant := f[23, 8] + 1;
+    uint8 one_exponent <: {1b1,7b0};
+    uint8 exponant <: f[23, 8] + 1;
     u = 0;
 
     if(f[31, 1] ){
@@ -568,45 +568,42 @@ algorithm mul_float(
     input uint32 f2, 
     output uint32 res)
 {
-    uint8 e1          := f1[23, 8];
-    uint8 e2          := f2[23, 8];
-    uint24 m1       := {1b1, f1[0, 23]};
-    uint24 m2       := {1b1, f2[0, 23]};
-    uint8 one_inv     := {1b1, 7b0};
-    uint8 bias        := ~{1b1, 7b0};
-    uint1 r_s                       := f1[31,1] == f2[31,1] ? f2[31,1] : -1;
+    uint8 e1          <: f1[23, 8];
+    uint8 e2          <: f2[23, 8];
+    uint24 m1       <: {1b1, f1[0, 23]};
+    uint24 m2       <: {1b1, f2[0, 23]};
+    uint8 one_inv     <: {1b1, 7b0};
+    uint8 bias        <: ~{1b1, 7b0};
+    uint1 r_s                       <: f1[31,1] == f2[31,1] ? f2[31,1] : 1b1;
     uint23 r_m(0);
     uint8 r_e(0);
     
-
     //mantissa multiplication
     uint48 tmp(0);
-    uint48 r_0 := m2[0,1] ? m1 : 0;
-        uint48 r_1 := m2[1,1] ? {m1,1b0} : 0;
-        uint48 r_2 := m2[2,1] ? {m1,2b0} : 0;
-        uint48 r_3 := m2[3,1] ? {m1,3b0} : 0;
-        uint48 r_4 := m2[4,1] ? {m1,4b0} : 0;
-        uint48 r_5 := m2[5,1] ? {m1,5b0} : 0;
-        uint48 r_6 := m2[6,1] ? {m1,6b0} : 0;
-        uint48 r_7 := m2[7,1] ? {m1,7b0} : 0;
-        uint48 r_8 := m2[8,1] ? {m1,8b0} : 0;
-        uint48 r_9 := m2[9,1] ? {m1,9b0} : 0;
-        uint48 r_10 := m2[10,1] ? {m1,10b0} : 0;
-        uint48 r_11 := m2[11,1] ? {m1,11b0} : 0;
-        uint48 r_12 := m2[12,1] ? {m1,12b0} : 0;
-        uint48 r_13 := m2[13,1] ? {m1,13b0} : 0;
-        uint48 r_14 := m2[14,1] ? {m1,14b0} : 0;
-        uint48 r_15 := m2[15,1] ? {m1,15b0} : 0;
-        uint48 r_16 := m2[16,1] ? {m1,16b0} : 0;
-        uint48 r_17 := m2[17,1] ? {m1,17b0} : 0;
-        uint48 r_18 := m2[18,1] ? {m1,18b0} : 0;
-        uint48 r_19 := m2[19,1] ? {m1,19b0} : 0;
-        uint48 r_20 := m2[20,1] ? {m1,20b0} : 0;
-        uint48 r_21 := m2[21,1] ? {m1,21b0} : 0;
-        uint48 r_22 := m2[22,1] ? {m1,22b0} : 0;
-        uint48 r_23 := m2[23,1] ? {m1,23b0} : 0;
-//    __display("m1 : %b", m1);
-//    __display("m2 : %b", m2);
+    uint48 r_0 <: m2[0,1] ? {24b0,m1} : 48b0;
+        uint48 r_1 <: m2[1,1] ? {23b0,m1,1b0} : 48b0;
+        uint48 r_2 <: m2[2,1] ? {22b0,m1,2b0} : 48b0;
+        uint48 r_3 <: m2[3,1] ? {21b0,m1,3b0} : 48b0;
+        uint48 r_4 <: m2[4,1] ? {20b0,m1,4b0} : 48b0;
+        uint48 r_5 <: m2[5,1] ? {19b0,m1,5b0} : 48b0;
+        uint48 r_6 <: m2[6,1] ? {18b0,m1,6b0} : 48b0;
+        uint48 r_7 <: m2[7,1] ? {17b0,m1,7b0} : 48b0;
+        uint48 r_8 <: m2[8,1] ? {16b0,m1,8b0} : 48b0;
+        uint48 r_9 <: m2[9,1] ? {15b0,m1,9b0} : 48b0;
+        uint48 r_10 <: m2[10,1] ? {14b0,m1,10b0} : 48b0;
+        uint48 r_11 <: m2[11,1] ? {13b0,m1,11b0} : 48b0;
+        uint48 r_12 <: m2[12,1] ? {12b0,m1,12b0} : 48b0;
+        uint48 r_13 <: m2[13,1] ? {11b0,m1,13b0} : 48b0;
+        uint48 r_14 <: m2[14,1] ? {10b0,m1,14b0} : 48b0;
+        uint48 r_15 <: m2[15,1] ? {9b0,m1,15b0} : 48b0;
+        uint48 r_16 <: m2[16,1] ? {8b0,m1,16b0} : 48b0;
+        uint48 r_17 <: m2[17,1] ? {7b0,m1,17b0} : 48b0;
+        uint48 r_18 <: m2[18,1] ? {6b0,m1,18b0} : 48b0;
+        uint48 r_19 <: m2[19,1] ? {5b0,m1,19b0} : 48b0;
+        uint48 r_20 <: m2[20,1] ? {4b0,m1,20b0} : 48b0;
+        uint48 r_21 <: m2[21,1] ? {3b0,m1,21b0} : 48b0;
+        uint48 r_22 <: m2[22,1] ? {2b0,m1,22b0} : 48b0;
+        uint48 r_23 <: m2[23,1] ? {1b0,m1,23b0} : 48b0;
     tmp = 
         r_0+
         r_1+
@@ -632,25 +629,23 @@ algorithm mul_float(
         r_21+
         r_22+
         r_23;
-
-//    __display("tmp : %b", tmp);
     
     r_m = tmp[47,1] ? tmp[24, 23] : tmp[23, 23];
 
     //TODO fix for neg exponent
     if((e1[7,1] && e2[7,1]) | ~e1 == one_inv | ~e2 == one_inv){
-        r_e = tmp[47,1] ? e1  + (e2[0,7]+ 1) +1 : e1  + (e2[0,7]+ 1);
+        r_e = (e1-bias) + (e2-bias) + bias + tmp[47,1] ;
     }
     else{
         if(e1[7,1] && ~e2[7,1]){
-            r_e = tmp[47,1] ? e1 - (bias-e2) +1:  e1 - (bias-e2) ;
+            r_e = e1 - (bias-e2) + tmp[47,1];
         }
         else{
             if(~e1[7,1] && e2[7,1]){
-                r_e = tmp[47,1] ? e2 - (bias-e1) +1 :  e2 - (bias-e1);
+                r_e = e2 - (bias-e1) + tmp[47,1];
             }
             else{ /*~e1[7] && ~e2[7]*/                
-                r_e =  tmp[47,1] ? e2+e1 - bias +1 : e2+e1 - bias;
+                r_e = e2 + e1 - bias + tmp[47,1];
             }
         }
     }
@@ -663,8 +658,8 @@ algorithm mul_float(
 algorithm main(output uint8 leds){
     uint_to_float to_float;
     float_to_uint to_uint;
-    uint32 u1(128);
-    uint32 u2(127);
+    uint32 u1(127);
+    uint32 u2(1);
 
     uint32 u3(0);
     inf_float inf;
@@ -676,17 +671,18 @@ algorithm main(output uint8 leds){
     uint1 b = uninitialized;
 
     
-    f1 = 32b00111110101101101000000101100111;
-    f2 = 32b01000010111111100000000000000000;
+    //f1 = 32b00111110101101101000000101100111;
+    //f2 = 32b01000010111111100000000000000000;
+    (f1)<-to_float<-(u1);
     ++:
     (f2)<-to_float<-(u2);
     ++:
     (f3)<-mul<-(f1,f2);
     ++:
-    (u3)<-to_uint<-(f2);
-    /*__display(" %d                  = %b %b %b", u1, f1[31,1], f1[23,8], f1[0,23]);
-    __display(" 0.875                       = %b %b %b", f2[31,1], f2[23,8], f2[0,23]);
-    __display(" %d * 0.875          = %b %b %b", u1,f3[31,1], f3[23,8], f3[0,23]);*/
-    __display("	%d                 = %d",u2, u3);
+    (u3)<-to_uint<-(f3);
+    __display(" %d                  = %b %b %b", u1, f1[31,1], f1[23,8], f1[0,23]);
+    __display(" %d                      = %b %b %b",u2, f2[31,1], f2[23,8], f2[0,23]);
+    __display(" %d * %d          = %b %b %b", u1, u2 ,f3[31,1], f3[23,8], f3[0,23]);
+    __display(" %d ", u3);
     
 }
