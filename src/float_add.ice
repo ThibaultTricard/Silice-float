@@ -90,7 +90,9 @@ algorithm add_float(input uint$float_size$ f1, input uint$float_size$ f2, output
         }
         else{
     $$end
-
+            if(sum_mantissa == $mantissa_size * 2+2$b0 && dif_exponent == $exponant_size$b0){
+                carry = max_exponant;
+            }
     $$for i=mantissa_size*2,0,-1  do
         }
     $$end
