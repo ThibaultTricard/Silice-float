@@ -1,7 +1,7 @@
 $$if MUL_FLOAT == nil then
 $$MUL_FLOAT = 1
 
-algorithm mul_float(
+algorithm float_mul(
     input uint$float_size$ f1,
     input uint$float_size$ f2, 
     output uint$float_size$ res)

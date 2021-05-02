@@ -1,7 +1,7 @@
 $$if INT_TO_FLOAT == nil then
 $$INT_TO_FLOAT = 1
 
-algorithm int$int_size$_to_float(input int$int_size$ i output uint$float_size$ f){
+algorithm int_to_float(input int$int_size$ i output uint$float_size$ f){
     uint$int_size$ u <: i[$int_size-1$,1] ? ((~i)+1) : i;
     uint1 s <: i[$int_size-1$,1];
     uint$exponant_size$ exponant = 0;
@@ -35,7 +35,7 @@ algorithm int$int_size$_to_float(input int$int_size$ i output uint$float_size$ f
     f = {s, exponant, mantissa};
 }
 
-algorithm float_to_int$int_size$(input uint$float_size$ f,output int$int_size$ i){
+algorithm float_to_int(input uint$float_size$ f,output int$int_size$ i){
     uint$exponant_size$ one_exponent <: {1b1,$exponant_size-1$b0};
     uint$exponant_size$ exponant <: f[$mantissa_size$, $exponant_size$] + 1;
     uint$int_size$ u = 0;

@@ -79,282 +79,127 @@ algorithm uint_to_float(input uint32 u, output uint32 f){
     uint23 mantissa = 0;
         if(u[31,1]){
             exponant = {1b1, 7d31} -1;
-            __display("u : %b", u);
-            __display("size : %d", 23);
-            __display("start : %d", 8);
-            __display("padding : %d", 0);
             mantissa = u[8,23];
-            __display("mantissa %b", mantissa);
         } else {
         if(u[30,1]){
             exponant = {1b1, 7d30} -1;
-            __display("u : %b", u);
-            __display("size : %d", 23);
-            __display("start : %d", 7);
-            __display("padding : %d", 0);
             mantissa = u[7,23];
-            __display("mantissa %b", mantissa);
         } else {
         if(u[29,1]){
             exponant = {1b1, 7d29} -1;
-            __display("u : %b", u);
-            __display("size : %d", 23);
-            __display("start : %d", 6);
-            __display("padding : %d", 0);
             mantissa = u[6,23];
-            __display("mantissa %b", mantissa);
         } else {
         if(u[28,1]){
             exponant = {1b1, 7d28} -1;
-            __display("u : %b", u);
-            __display("size : %d", 23);
-            __display("start : %d", 5);
-            __display("padding : %d", 0);
             mantissa = u[5,23];
-            __display("mantissa %b", mantissa);
         } else {
         if(u[27,1]){
             exponant = {1b1, 7d27} -1;
-            __display("u : %b", u);
-            __display("size : %d", 23);
-            __display("start : %d", 4);
-            __display("padding : %d", 0);
             mantissa = u[4,23];
-            __display("mantissa %b", mantissa);
         } else {
         if(u[26,1]){
             exponant = {1b1, 7d26} -1;
-            __display("u : %b", u);
-            __display("size : %d", 23);
-            __display("start : %d", 3);
-            __display("padding : %d", 0);
             mantissa = u[3,23];
-            __display("mantissa %b", mantissa);
         } else {
         if(u[25,1]){
             exponant = {1b1, 7d25} -1;
-            __display("u : %b", u);
-            __display("size : %d", 23);
-            __display("start : %d", 2);
-            __display("padding : %d", 0);
             mantissa = u[2,23];
-            __display("mantissa %b", mantissa);
         } else {
         if(u[24,1]){
             exponant = {1b1, 7d24} -1;
-            __display("u : %b", u);
-            __display("size : %d", 23);
-            __display("start : %d", 1);
-            __display("padding : %d", 0);
             mantissa = u[1,23];
-            __display("mantissa %b", mantissa);
         } else {
         if(u[23,1]){
             exponant = {1b1, 7d23} -1;
-            __display("u : %b", u);
-            __display("size : %d", 23);
-            __display("start : %d", 0);
-            __display("padding : %d", 0);
             mantissa = u[0,23];
-            __display("mantissa %b", mantissa);
         } else {
         if(u[22,1]){
             exponant = {1b1, 7d22} -1;
-            __display("u : %b", u);
-            __display("size : %d", 22);
-            __display("start : %d", 0);
-            __display("padding : %d", 1);
             mantissa = {u[0,22], 1d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[21,1]){
             exponant = {1b1, 7d21} -1;
-            __display("u : %b", u);
-            __display("size : %d", 21);
-            __display("start : %d", 0);
-            __display("padding : %d", 2);
             mantissa = {u[0,21], 2d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[20,1]){
             exponant = {1b1, 7d20} -1;
-            __display("u : %b", u);
-            __display("size : %d", 20);
-            __display("start : %d", 0);
-            __display("padding : %d", 3);
             mantissa = {u[0,20], 3d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[19,1]){
             exponant = {1b1, 7d19} -1;
-            __display("u : %b", u);
-            __display("size : %d", 19);
-            __display("start : %d", 0);
-            __display("padding : %d", 4);
             mantissa = {u[0,19], 4d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[18,1]){
             exponant = {1b1, 7d18} -1;
-            __display("u : %b", u);
-            __display("size : %d", 18);
-            __display("start : %d", 0);
-            __display("padding : %d", 5);
             mantissa = {u[0,18], 5d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[17,1]){
             exponant = {1b1, 7d17} -1;
-            __display("u : %b", u);
-            __display("size : %d", 17);
-            __display("start : %d", 0);
-            __display("padding : %d", 6);
             mantissa = {u[0,17], 6d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[16,1]){
             exponant = {1b1, 7d16} -1;
-            __display("u : %b", u);
-            __display("size : %d", 16);
-            __display("start : %d", 0);
-            __display("padding : %d", 7);
             mantissa = {u[0,16], 7d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[15,1]){
             exponant = {1b1, 7d15} -1;
-            __display("u : %b", u);
-            __display("size : %d", 15);
-            __display("start : %d", 0);
-            __display("padding : %d", 8);
             mantissa = {u[0,15], 8d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[14,1]){
             exponant = {1b1, 7d14} -1;
-            __display("u : %b", u);
-            __display("size : %d", 14);
-            __display("start : %d", 0);
-            __display("padding : %d", 9);
             mantissa = {u[0,14], 9d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[13,1]){
             exponant = {1b1, 7d13} -1;
-            __display("u : %b", u);
-            __display("size : %d", 13);
-            __display("start : %d", 0);
-            __display("padding : %d", 10);
             mantissa = {u[0,13], 10d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[12,1]){
             exponant = {1b1, 7d12} -1;
-            __display("u : %b", u);
-            __display("size : %d", 12);
-            __display("start : %d", 0);
-            __display("padding : %d", 11);
             mantissa = {u[0,12], 11d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[11,1]){
             exponant = {1b1, 7d11} -1;
-            __display("u : %b", u);
-            __display("size : %d", 11);
-            __display("start : %d", 0);
-            __display("padding : %d", 12);
             mantissa = {u[0,11], 12d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[10,1]){
             exponant = {1b1, 7d10} -1;
-            __display("u : %b", u);
-            __display("size : %d", 10);
-            __display("start : %d", 0);
-            __display("padding : %d", 13);
             mantissa = {u[0,10], 13d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[9,1]){
             exponant = {1b1, 7d9} -1;
-            __display("u : %b", u);
-            __display("size : %d", 9);
-            __display("start : %d", 0);
-            __display("padding : %d", 14);
             mantissa = {u[0,9], 14d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[8,1]){
             exponant = {1b1, 7d8} -1;
-            __display("u : %b", u);
-            __display("size : %d", 8);
-            __display("start : %d", 0);
-            __display("padding : %d", 15);
             mantissa = {u[0,8], 15d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[7,1]){
             exponant = {1b1, 7d7} -1;
-            __display("u : %b", u);
-            __display("size : %d", 7);
-            __display("start : %d", 0);
-            __display("padding : %d", 16);
             mantissa = {u[0,7], 16d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[6,1]){
             exponant = {1b1, 7d6} -1;
-            __display("u : %b", u);
-            __display("size : %d", 6);
-            __display("start : %d", 0);
-            __display("padding : %d", 17);
             mantissa = {u[0,6], 17d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[5,1]){
             exponant = {1b1, 7d5} -1;
-            __display("u : %b", u);
-            __display("size : %d", 5);
-            __display("start : %d", 0);
-            __display("padding : %d", 18);
             mantissa = {u[0,5], 18d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[4,1]){
             exponant = {1b1, 7d4} -1;
-            __display("u : %b", u);
-            __display("size : %d", 4);
-            __display("start : %d", 0);
-            __display("padding : %d", 19);
             mantissa = {u[0,4], 19d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[3,1]){
             exponant = {1b1, 7d3} -1;
-            __display("u : %b", u);
-            __display("size : %d", 3);
-            __display("start : %d", 0);
-            __display("padding : %d", 20);
             mantissa = {u[0,3], 20d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[2,1]){
             exponant = {1b1, 7d2} -1;
-            __display("u : %b", u);
-            __display("size : %d", 2);
-            __display("start : %d", 0);
-            __display("padding : %d", 21);
             mantissa = {u[0,2], 21d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[1,1]){
             exponant = {1b1, 7d1} -1;
-            __display("u : %b", u);
-            __display("size : %d", 1);
-            __display("start : %d", 0);
-            __display("padding : %d", 22);
             mantissa = {u[0,1], 22d0};
-            __display("mantissa %b", mantissa);
         } else {
         if(u[0,1]){
             exponant = {1b1, 7d0} -1;
@@ -540,7 +385,7 @@ algorithm float_to_uint(input uint32 f, output uint32 u){
 
 
 
-algorithm inf_float(input uint32 f1, input uint32 f2, output uint1 inf){
+algorithm float_inf(input uint32 f1, input uint32 f2, output uint1 inf){
     inf = 0;
     if(f1[31, 1] & ~f2[31, 1]){
         inf = 1;
@@ -551,7 +396,7 @@ algorithm inf_float(input uint32 f1, input uint32 f2, output uint1 inf){
     }
 }
 
-algorithm sup_float(input uint32 f1, input uint32 f2, output uint1 inf){
+algorithm float_sup(input uint32 f1, input uint32 f2, output uint1 inf){
     inf = 0;
     if(~f1[31, 1] & f2[31, 1]){
         inf = 1;
@@ -563,7 +408,7 @@ algorithm sup_float(input uint32 f1, input uint32 f2, output uint1 inf){
 }
 
 
-algorithm mul_float(
+algorithm float_mul(
     input uint32 f1,
     input uint32 f2, 
     output uint32 res)
@@ -581,29 +426,29 @@ algorithm mul_float(
     //mantissa multiplication
     uint48 tmp(0);
     uint48 r_0 <: m2[0,1] ? {24b0,m1} : 48b0;
-        uint48 r_1 <: m2[1,1] ? {23b0,m1,1b0} : 48b0;
-        uint48 r_2 <: m2[2,1] ? {22b0,m1,2b0} : 48b0;
-        uint48 r_3 <: m2[3,1] ? {21b0,m1,3b0} : 48b0;
-        uint48 r_4 <: m2[4,1] ? {20b0,m1,4b0} : 48b0;
-        uint48 r_5 <: m2[5,1] ? {19b0,m1,5b0} : 48b0;
-        uint48 r_6 <: m2[6,1] ? {18b0,m1,6b0} : 48b0;
-        uint48 r_7 <: m2[7,1] ? {17b0,m1,7b0} : 48b0;
-        uint48 r_8 <: m2[8,1] ? {16b0,m1,8b0} : 48b0;
-        uint48 r_9 <: m2[9,1] ? {15b0,m1,9b0} : 48b0;
-        uint48 r_10 <: m2[10,1] ? {14b0,m1,10b0} : 48b0;
-        uint48 r_11 <: m2[11,1] ? {13b0,m1,11b0} : 48b0;
-        uint48 r_12 <: m2[12,1] ? {12b0,m1,12b0} : 48b0;
-        uint48 r_13 <: m2[13,1] ? {11b0,m1,13b0} : 48b0;
-        uint48 r_14 <: m2[14,1] ? {10b0,m1,14b0} : 48b0;
-        uint48 r_15 <: m2[15,1] ? {9b0,m1,15b0} : 48b0;
-        uint48 r_16 <: m2[16,1] ? {8b0,m1,16b0} : 48b0;
-        uint48 r_17 <: m2[17,1] ? {7b0,m1,17b0} : 48b0;
-        uint48 r_18 <: m2[18,1] ? {6b0,m1,18b0} : 48b0;
-        uint48 r_19 <: m2[19,1] ? {5b0,m1,19b0} : 48b0;
-        uint48 r_20 <: m2[20,1] ? {4b0,m1,20b0} : 48b0;
-        uint48 r_21 <: m2[21,1] ? {3b0,m1,21b0} : 48b0;
-        uint48 r_22 <: m2[22,1] ? {2b0,m1,22b0} : 48b0;
-        uint48 r_23 <: m2[23,1] ? {1b0,m1,23b0} : 48b0;
+    uint48 r_1 <: m2[1,1] ? {23b0,m1,1b0} : 48b0;
+    uint48 r_2 <: m2[2,1] ? {22b0,m1,2b0} : 48b0;
+    uint48 r_3 <: m2[3,1] ? {21b0,m1,3b0} : 48b0;
+    uint48 r_4 <: m2[4,1] ? {20b0,m1,4b0} : 48b0;
+    uint48 r_5 <: m2[5,1] ? {19b0,m1,5b0} : 48b0;
+    uint48 r_6 <: m2[6,1] ? {18b0,m1,6b0} : 48b0;
+    uint48 r_7 <: m2[7,1] ? {17b0,m1,7b0} : 48b0;
+    uint48 r_8 <: m2[8,1] ? {16b0,m1,8b0} : 48b0;
+    uint48 r_9 <: m2[9,1] ? {15b0,m1,9b0} : 48b0;
+    uint48 r_10 <: m2[10,1] ? {14b0,m1,10b0} : 48b0;
+    uint48 r_11 <: m2[11,1] ? {13b0,m1,11b0} : 48b0;
+    uint48 r_12 <: m2[12,1] ? {12b0,m1,12b0} : 48b0;
+    uint48 r_13 <: m2[13,1] ? {11b0,m1,13b0} : 48b0;
+    uint48 r_14 <: m2[14,1] ? {10b0,m1,14b0} : 48b0;
+    uint48 r_15 <: m2[15,1] ? {9b0,m1,15b0} : 48b0;
+    uint48 r_16 <: m2[16,1] ? {8b0,m1,16b0} : 48b0;
+    uint48 r_17 <: m2[17,1] ? {7b0,m1,17b0} : 48b0;
+    uint48 r_18 <: m2[18,1] ? {6b0,m1,18b0} : 48b0;
+    uint48 r_19 <: m2[19,1] ? {5b0,m1,19b0} : 48b0;
+    uint48 r_20 <: m2[20,1] ? {4b0,m1,20b0} : 48b0;
+    uint48 r_21 <: m2[21,1] ? {3b0,m1,21b0} : 48b0;
+    uint48 r_22 <: m2[22,1] ? {2b0,m1,22b0} : 48b0;
+    uint48 r_23 <: m2[23,1] ? {1b0,m1,23b0} : 48b0;
     tmp = 
         r_0+
         r_1+
@@ -632,7 +477,6 @@ algorithm mul_float(
     
     r_m = tmp[47,1] ? tmp[24, 23] : tmp[23, 23];
 
-    //TODO fix for neg exponent
     if((e1[7,1] && e2[7,1]) | ~e1 == one_inv | ~e2 == one_inv){
         r_e = (e1-bias) + (e2-bias) + bias + tmp[47,1] ;
     }
@@ -649,8 +493,1058 @@ algorithm mul_float(
             }
         }
     }
-    
     res = {r_s,r_e,r_m};
+}
+
+
+
+//no subtract operation, to substract invert the sign bit of the secong float
+
+algorithm float_add(input uint32 f1, input uint32 f2, output uint32 res){
+    uint48 max_mantissa(0);
+    uint48 min_mantissa(0);
+
+    uint8 max_exponant(0);
+    
+    uint48 sum_mantissa(0);
+
+    uint8 dif_exponent(0);
+    uint1 f1_inf_f2 (0);
+    float_inf inf;
+    (f1_inf_f2)<-inf<-({1b0,f1[0, 31]},{1b0,f2[0, 31]}); 
+
+    dif_exponent = (f1_inf_f2)?
+                   (f2[23,8]) - (f1[23,8]) :
+                   (f1[23,8]) - (f2[23,8]);
+
+    
+    max_exponant = (f1_inf_f2)?
+                   (f2[23,8]):
+                   (f1[23,8]);
+
+    
+        if(0 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {0b0,f1[0, 23], 23b0}  | {1b1, 46b0}; 
+            }else{
+                min_mantissa = {0b0,f2[0, 23], 23b0}  | {1b1, 46b0};
+            }     
+
+        }else{
+        if(1 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {1b0,f1[0, 23], 22b0}  | {1b1, 45b0}; 
+            }else{
+                min_mantissa = {1b0,f2[0, 23], 22b0}  | {1b1, 45b0};
+            }     
+
+        }else{
+        if(2 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {2b0,f1[0, 23], 21b0}  | {1b1, 44b0}; 
+            }else{
+                min_mantissa = {2b0,f2[0, 23], 21b0}  | {1b1, 44b0};
+            }     
+
+        }else{
+        if(3 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {3b0,f1[0, 23], 20b0}  | {1b1, 43b0}; 
+            }else{
+                min_mantissa = {3b0,f2[0, 23], 20b0}  | {1b1, 43b0};
+            }     
+
+        }else{
+        if(4 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {4b0,f1[0, 23], 19b0}  | {1b1, 42b0}; 
+            }else{
+                min_mantissa = {4b0,f2[0, 23], 19b0}  | {1b1, 42b0};
+            }     
+
+        }else{
+        if(5 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {5b0,f1[0, 23], 18b0}  | {1b1, 41b0}; 
+            }else{
+                min_mantissa = {5b0,f2[0, 23], 18b0}  | {1b1, 41b0};
+            }     
+
+        }else{
+        if(6 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {6b0,f1[0, 23], 17b0}  | {1b1, 40b0}; 
+            }else{
+                min_mantissa = {6b0,f2[0, 23], 17b0}  | {1b1, 40b0};
+            }     
+
+        }else{
+        if(7 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {7b0,f1[0, 23], 16b0}  | {1b1, 39b0}; 
+            }else{
+                min_mantissa = {7b0,f2[0, 23], 16b0}  | {1b1, 39b0};
+            }     
+
+        }else{
+        if(8 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {8b0,f1[0, 23], 15b0}  | {1b1, 38b0}; 
+            }else{
+                min_mantissa = {8b0,f2[0, 23], 15b0}  | {1b1, 38b0};
+            }     
+
+        }else{
+        if(9 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {9b0,f1[0, 23], 14b0}  | {1b1, 37b0}; 
+            }else{
+                min_mantissa = {9b0,f2[0, 23], 14b0}  | {1b1, 37b0};
+            }     
+
+        }else{
+        if(10 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {10b0,f1[0, 23], 13b0}  | {1b1, 36b0}; 
+            }else{
+                min_mantissa = {10b0,f2[0, 23], 13b0}  | {1b1, 36b0};
+            }     
+
+        }else{
+        if(11 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {11b0,f1[0, 23], 12b0}  | {1b1, 35b0}; 
+            }else{
+                min_mantissa = {11b0,f2[0, 23], 12b0}  | {1b1, 35b0};
+            }     
+
+        }else{
+        if(12 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {12b0,f1[0, 23], 11b0}  | {1b1, 34b0}; 
+            }else{
+                min_mantissa = {12b0,f2[0, 23], 11b0}  | {1b1, 34b0};
+            }     
+
+        }else{
+        if(13 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {13b0,f1[0, 23], 10b0}  | {1b1, 33b0}; 
+            }else{
+                min_mantissa = {13b0,f2[0, 23], 10b0}  | {1b1, 33b0};
+            }     
+
+        }else{
+        if(14 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {14b0,f1[0, 23], 9b0}  | {1b1, 32b0}; 
+            }else{
+                min_mantissa = {14b0,f2[0, 23], 9b0}  | {1b1, 32b0};
+            }     
+
+        }else{
+        if(15 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {15b0,f1[0, 23], 8b0}  | {1b1, 31b0}; 
+            }else{
+                min_mantissa = {15b0,f2[0, 23], 8b0}  | {1b1, 31b0};
+            }     
+
+        }else{
+        if(16 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {16b0,f1[0, 23], 7b0}  | {1b1, 30b0}; 
+            }else{
+                min_mantissa = {16b0,f2[0, 23], 7b0}  | {1b1, 30b0};
+            }     
+
+        }else{
+        if(17 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {17b0,f1[0, 23], 6b0}  | {1b1, 29b0}; 
+            }else{
+                min_mantissa = {17b0,f2[0, 23], 6b0}  | {1b1, 29b0};
+            }     
+
+        }else{
+        if(18 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {18b0,f1[0, 23], 5b0}  | {1b1, 28b0}; 
+            }else{
+                min_mantissa = {18b0,f2[0, 23], 5b0}  | {1b1, 28b0};
+            }     
+
+        }else{
+        if(19 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {19b0,f1[0, 23], 4b0}  | {1b1, 27b0}; 
+            }else{
+                min_mantissa = {19b0,f2[0, 23], 4b0}  | {1b1, 27b0};
+            }     
+
+        }else{
+        if(20 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {20b0,f1[0, 23], 3b0}  | {1b1, 26b0}; 
+            }else{
+                min_mantissa = {20b0,f2[0, 23], 3b0}  | {1b1, 26b0};
+            }     
+
+        }else{
+        if(21 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {21b0,f1[0, 23], 2b0}  | {1b1, 25b0}; 
+            }else{
+                min_mantissa = {21b0,f2[0, 23], 2b0}  | {1b1, 25b0};
+            }     
+
+        }else{
+        if(22 == dif_exponent){
+            if(f1_inf_f2){
+                min_mantissa = {22b0,f1[0, 23], 1b0}  | {1b1, 24b0}; 
+            }else{
+                min_mantissa = {22b0,f2[0, 23], 1b0}  | {1b1, 24b0};
+            }     
+
+        }else{
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+    max_mantissa = (f1_inf_f2)?
+                        {1b1,f2[0, 23], 23b0}: 
+                        {1b1,f1[0, 23], 23b0};
+    if(f1[31,1]==f2[31,1]){  
+        
+
+        sum_mantissa = max_mantissa + min_mantissa;
+        __display("sum_mantissa %b", sum_mantissa);
+        if(sum_mantissa[47,1]){
+            res ={f1[31,1], max_exponant+1, sum_mantissa[24,23]};
+        }else{
+            res ={f1[31,1], max_exponant, sum_mantissa[23,23]};
+        }
+    }
+    else{
+        uint1 res_sign(0);
+        uint8 carry(0);
+        uint23 res_mantissa(0);
+
+        res_sign = f1_inf_f2 ? f2[31,1] : f1[31,1];
+        
+
+        sum_mantissa = max_mantissa - min_mantissa;
+        __display("sum_mantissa %b",sum_mantissa);
+    
+        if(sum_mantissa[46,1]){
+            carry = 0;
+            __display("i %d",46);
+            
+                __display("start %d",23);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[23,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[45,1]){
+            carry = 1;
+            __display("i %d",45);
+            
+                __display("start %d",22);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[22,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[44,1]){
+            carry = 2;
+            __display("i %d",44);
+            
+                __display("start %d",21);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[21,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[43,1]){
+            carry = 3;
+            __display("i %d",43);
+            
+                __display("start %d",20);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[20,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[42,1]){
+            carry = 4;
+            __display("i %d",42);
+            
+                __display("start %d",19);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[19,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[41,1]){
+            carry = 5;
+            __display("i %d",41);
+            
+                __display("start %d",18);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[18,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[40,1]){
+            carry = 6;
+            __display("i %d",40);
+            
+                __display("start %d",17);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[17,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[39,1]){
+            carry = 7;
+            __display("i %d",39);
+            
+                __display("start %d",16);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[16,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[38,1]){
+            carry = 8;
+            __display("i %d",38);
+            
+                __display("start %d",15);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[15,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[37,1]){
+            carry = 9;
+            __display("i %d",37);
+            
+                __display("start %d",14);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[14,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[36,1]){
+            carry = 10;
+            __display("i %d",36);
+            
+                __display("start %d",13);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[13,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[35,1]){
+            carry = 11;
+            __display("i %d",35);
+            
+                __display("start %d",12);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[12,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[34,1]){
+            carry = 12;
+            __display("i %d",34);
+            
+                __display("start %d",11);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[11,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[33,1]){
+            carry = 13;
+            __display("i %d",33);
+            
+                __display("start %d",10);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[10,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[32,1]){
+            carry = 14;
+            __display("i %d",32);
+            
+                __display("start %d",9);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[9,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[31,1]){
+            carry = 15;
+            __display("i %d",31);
+            
+                __display("start %d",8);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[8,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[30,1]){
+            carry = 16;
+            __display("i %d",30);
+            
+                __display("start %d",7);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[7,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[29,1]){
+            carry = 17;
+            __display("i %d",29);
+            
+                __display("start %d",6);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[6,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[28,1]){
+            carry = 18;
+            __display("i %d",28);
+            
+                __display("start %d",5);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[5,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[27,1]){
+            carry = 19;
+            __display("i %d",27);
+            
+                __display("start %d",4);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[4,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[26,1]){
+            carry = 20;
+            __display("i %d",26);
+            
+                __display("start %d",3);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[3,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[25,1]){
+            carry = 21;
+            __display("i %d",25);
+            
+                __display("start %d",2);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[2,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[24,1]){
+            carry = 22;
+            __display("i %d",24);
+            
+                __display("start %d",1);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[1,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[23,1]){
+            carry = 23;
+            __display("i %d",23);
+            
+                __display("start %d",0);
+                __display("size %d",23);
+                __display("padding %d",0);
+                res_mantissa = sum_mantissa[0,23];  
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[22,1]){
+            carry = 24;
+            __display("i %d",22);
+            
+                __display("start %d",0);
+                __display("size %d",22);
+                __display("padding %d",1);
+                res_mantissa = {sum_mantissa[0,22],1b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[21,1]){
+            carry = 25;
+            __display("i %d",21);
+            
+                __display("start %d",0);
+                __display("size %d",21);
+                __display("padding %d",2);
+                res_mantissa = {sum_mantissa[0,21],2b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[20,1]){
+            carry = 26;
+            __display("i %d",20);
+            
+                __display("start %d",0);
+                __display("size %d",20);
+                __display("padding %d",3);
+                res_mantissa = {sum_mantissa[0,20],3b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[19,1]){
+            carry = 27;
+            __display("i %d",19);
+            
+                __display("start %d",0);
+                __display("size %d",19);
+                __display("padding %d",4);
+                res_mantissa = {sum_mantissa[0,19],4b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[18,1]){
+            carry = 28;
+            __display("i %d",18);
+            
+                __display("start %d",0);
+                __display("size %d",18);
+                __display("padding %d",5);
+                res_mantissa = {sum_mantissa[0,18],5b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[17,1]){
+            carry = 29;
+            __display("i %d",17);
+            
+                __display("start %d",0);
+                __display("size %d",17);
+                __display("padding %d",6);
+                res_mantissa = {sum_mantissa[0,17],6b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[16,1]){
+            carry = 30;
+            __display("i %d",16);
+            
+                __display("start %d",0);
+                __display("size %d",16);
+                __display("padding %d",7);
+                res_mantissa = {sum_mantissa[0,16],7b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[15,1]){
+            carry = 31;
+            __display("i %d",15);
+            
+                __display("start %d",0);
+                __display("size %d",15);
+                __display("padding %d",8);
+                res_mantissa = {sum_mantissa[0,15],8b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[14,1]){
+            carry = 32;
+            __display("i %d",14);
+            
+                __display("start %d",0);
+                __display("size %d",14);
+                __display("padding %d",9);
+                res_mantissa = {sum_mantissa[0,14],9b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[13,1]){
+            carry = 33;
+            __display("i %d",13);
+            
+                __display("start %d",0);
+                __display("size %d",13);
+                __display("padding %d",10);
+                res_mantissa = {sum_mantissa[0,13],10b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[12,1]){
+            carry = 34;
+            __display("i %d",12);
+            
+                __display("start %d",0);
+                __display("size %d",12);
+                __display("padding %d",11);
+                res_mantissa = {sum_mantissa[0,12],11b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[11,1]){
+            carry = 35;
+            __display("i %d",11);
+            
+                __display("start %d",0);
+                __display("size %d",11);
+                __display("padding %d",12);
+                res_mantissa = {sum_mantissa[0,11],12b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[10,1]){
+            carry = 36;
+            __display("i %d",10);
+            
+                __display("start %d",0);
+                __display("size %d",10);
+                __display("padding %d",13);
+                res_mantissa = {sum_mantissa[0,10],13b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[9,1]){
+            carry = 37;
+            __display("i %d",9);
+            
+                __display("start %d",0);
+                __display("size %d",9);
+                __display("padding %d",14);
+                res_mantissa = {sum_mantissa[0,9],14b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[8,1]){
+            carry = 38;
+            __display("i %d",8);
+            
+                __display("start %d",0);
+                __display("size %d",8);
+                __display("padding %d",15);
+                res_mantissa = {sum_mantissa[0,8],15b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[7,1]){
+            carry = 39;
+            __display("i %d",7);
+            
+                __display("start %d",0);
+                __display("size %d",7);
+                __display("padding %d",16);
+                res_mantissa = {sum_mantissa[0,7],16b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[6,1]){
+            carry = 40;
+            __display("i %d",6);
+            
+                __display("start %d",0);
+                __display("size %d",6);
+                __display("padding %d",17);
+                res_mantissa = {sum_mantissa[0,6],17b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[5,1]){
+            carry = 41;
+            __display("i %d",5);
+            
+                __display("start %d",0);
+                __display("size %d",5);
+                __display("padding %d",18);
+                res_mantissa = {sum_mantissa[0,5],18b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[4,1]){
+            carry = 42;
+            __display("i %d",4);
+            
+                __display("start %d",0);
+                __display("size %d",4);
+                __display("padding %d",19);
+                res_mantissa = {sum_mantissa[0,4],19b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[3,1]){
+            carry = 43;
+            __display("i %d",3);
+            
+                __display("start %d",0);
+                __display("size %d",3);
+                __display("padding %d",20);
+                res_mantissa = {sum_mantissa[0,3],20b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[2,1]){
+            carry = 44;
+            __display("i %d",2);
+            
+                __display("start %d",0);
+                __display("size %d",2);
+                __display("padding %d",21);
+                res_mantissa = {sum_mantissa[0,2],21b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[1,1]){
+            carry = 45;
+            __display("i %d",1);
+            
+                __display("start %d",0);
+                __display("size %d",1);
+                __display("padding %d",22);
+                res_mantissa = {sum_mantissa[0,1],22b0};
+                __display("res_mantissa %b",res_mantissa);
+        }
+        else{
+        if(sum_mantissa[0,1]){
+            carry = 46;
+            __display("i %d",0);
+            
+                res_mantissa = 0;
+        }
+        else{
+            if(sum_mantissa == 48b0 && dif_exponent == 8b0){
+                carry = max_exponant;
+            }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+
+        res ={res_sign, max_exponant-carry, res_mantissa};
+    }
+}
+
+
+
+// f3 = f1/f2
+algorithm float_div(input uint32 f1,  input uint32 f2, output uint32 f3) 
+{
+    uint1 f3_s(0);
+    int9 f1_e(0); //<: f1[23, 8];
+    int9 f2_e(0);
+    int9 f3_e(0);
+    uint8 r_e(0);
+
+    uint47 f1_m(0); 
+    uint47 f3_m(0); 
+    uint47 remain(0);
+
+    uint47 f2_m0 = uninitialized;
+    uint47 f2_m1 = uninitialized;
+    uint47 f2_m2 = uninitialized;
+    uint47 f2_m3 = uninitialized;
+    uint47 f2_m4 = uninitialized;
+    uint47 f2_m5 = uninitialized;
+    uint47 f2_m6 = uninitialized;
+    uint47 f2_m7 = uninitialized;
+    uint47 f2_m8 = uninitialized;
+    uint47 f2_m9 = uninitialized;
+    uint47 f2_m10 = uninitialized;
+    uint47 f2_m11 = uninitialized;
+    uint47 f2_m12 = uninitialized;
+    uint47 f2_m13 = uninitialized;
+    uint47 f2_m14 = uninitialized;
+    uint47 f2_m15 = uninitialized;
+    uint47 f2_m16 = uninitialized;
+    uint47 f2_m17 = uninitialized;
+    uint47 f2_m18 = uninitialized;
+    uint47 f2_m19 = uninitialized;
+    uint47 f2_m20 = uninitialized;
+    uint47 f2_m21 = uninitialized;
+    uint47 f2_m22 = uninitialized;
+    uint47 f2_m23 = uninitialized;
+
+    uint8 bias        <: ~{1b1, 7b0};
+
+    //sign
+    f3_s = (f1[31,1] == f2[31,1]) ? 0 : 1; //sign of the result
+
+    //exponent
+    f1_e= f1[23, 8] -bias;
+    f2_e= f2[23, 8] -bias;
+
+    f3_e = (f1_e - f2_e) + bias;
+    r_e = f3_e[0, 8];
+    __display("exponent = %b",f3_e);
+
+    //mantissa
+    f1_m = {1b1, f1[0, 23], 23b0};
+
+
+    f2_m0 = {1b1, f2[0, 23]} << 0;
+    f2_m1 = {1b1, f2[0, 23]} << 1;
+    f2_m2 = {1b1, f2[0, 23]} << 2;
+    f2_m3 = {1b1, f2[0, 23]} << 3;
+    f2_m4 = {1b1, f2[0, 23]} << 4;
+    f2_m5 = {1b1, f2[0, 23]} << 5;
+    f2_m6 = {1b1, f2[0, 23]} << 6;
+    f2_m7 = {1b1, f2[0, 23]} << 7;
+    f2_m8 = {1b1, f2[0, 23]} << 8;
+    f2_m9 = {1b1, f2[0, 23]} << 9;
+    f2_m10 = {1b1, f2[0, 23]} << 10;
+    f2_m11 = {1b1, f2[0, 23]} << 11;
+    f2_m12 = {1b1, f2[0, 23]} << 12;
+    f2_m13 = {1b1, f2[0, 23]} << 13;
+    f2_m14 = {1b1, f2[0, 23]} << 14;
+    f2_m15 = {1b1, f2[0, 23]} << 15;
+    f2_m16 = {1b1, f2[0, 23]} << 16;
+    f2_m17 = {1b1, f2[0, 23]} << 17;
+    f2_m18 = {1b1, f2[0, 23]} << 18;
+    f2_m19 = {1b1, f2[0, 23]} << 19;
+    f2_m20 = {1b1, f2[0, 23]} << 20;
+    f2_m21 = {1b1, f2[0, 23]} << 21;
+    f2_m22 = {1b1, f2[0, 23]} << 22;
+    f2_m23 = {1b1, f2[0, 23]} << 23;
+
+    remain = f1_m;
+    ++:
+    if(remain >= f2_m23){
+        remain = remain - f2_m23;
+        f3_m = f3_m + (1 << 23); // + 23
+    }
+    ++:
+    if(remain >= f2_m22){
+        remain = remain - f2_m22;
+        f3_m = f3_m + (1 << 22); // + 23
+    }
+    ++:
+    if(remain >= f2_m21){
+        remain = remain - f2_m21;
+        f3_m = f3_m + (1 << 21); // + 23
+    }
+    ++:
+    if(remain >= f2_m20){
+        remain = remain - f2_m20;
+        f3_m = f3_m + (1 << 20); // + 23
+    }
+    ++:
+    if(remain >= f2_m19){
+        remain = remain - f2_m19;
+        f3_m = f3_m + (1 << 19); // + 23
+    }
+    ++:
+    if(remain >= f2_m18){
+        remain = remain - f2_m18;
+        f3_m = f3_m + (1 << 18); // + 23
+    }
+    ++:
+    if(remain >= f2_m17){
+        remain = remain - f2_m17;
+        f3_m = f3_m + (1 << 17); // + 23
+    }
+    ++:
+    if(remain >= f2_m16){
+        remain = remain - f2_m16;
+        f3_m = f3_m + (1 << 16); // + 23
+    }
+    ++:
+    if(remain >= f2_m15){
+        remain = remain - f2_m15;
+        f3_m = f3_m + (1 << 15); // + 23
+    }
+    ++:
+    if(remain >= f2_m14){
+        remain = remain - f2_m14;
+        f3_m = f3_m + (1 << 14); // + 23
+    }
+    ++:
+    if(remain >= f2_m13){
+        remain = remain - f2_m13;
+        f3_m = f3_m + (1 << 13); // + 23
+    }
+    ++:
+    if(remain >= f2_m12){
+        remain = remain - f2_m12;
+        f3_m = f3_m + (1 << 12); // + 23
+    }
+    ++:
+    if(remain >= f2_m11){
+        remain = remain - f2_m11;
+        f3_m = f3_m + (1 << 11); // + 23
+    }
+    ++:
+    if(remain >= f2_m10){
+        remain = remain - f2_m10;
+        f3_m = f3_m + (1 << 10); // + 23
+    }
+    ++:
+    if(remain >= f2_m9){
+        remain = remain - f2_m9;
+        f3_m = f3_m + (1 << 9); // + 23
+    }
+    ++:
+    if(remain >= f2_m8){
+        remain = remain - f2_m8;
+        f3_m = f3_m + (1 << 8); // + 23
+    }
+    ++:
+    if(remain >= f2_m7){
+        remain = remain - f2_m7;
+        f3_m = f3_m + (1 << 7); // + 23
+    }
+    ++:
+    if(remain >= f2_m6){
+        remain = remain - f2_m6;
+        f3_m = f3_m + (1 << 6); // + 23
+    }
+    ++:
+    if(remain >= f2_m5){
+        remain = remain - f2_m5;
+        f3_m = f3_m + (1 << 5); // + 23
+    }
+    ++:
+    if(remain >= f2_m4){
+        remain = remain - f2_m4;
+        f3_m = f3_m + (1 << 4); // + 23
+    }
+    ++:
+    if(remain >= f2_m3){
+        remain = remain - f2_m3;
+        f3_m = f3_m + (1 << 3); // + 23
+    }
+    ++:
+    if(remain >= f2_m2){
+        remain = remain - f2_m2;
+        f3_m = f3_m + (1 << 2); // + 23
+    }
+    ++:
+    if(remain >= f2_m1){
+        remain = remain - f2_m1;
+        f3_m = f3_m + (1 << 1); // + 23
+    }
+    ++:
+    if(remain >= f2_m0){
+        remain = remain - f2_m0;
+        f3_m = f3_m + (1 << 0); // + 23
+    }
+    ++:
+
+    
+    __display("remain = %b",remain);
+    __display("f3_m = %b",f3_m);
+    __display("f3_m = %b",f3_m[0,23]);
+
+    __display("r_e = %b",r_e);
+    __display("carry = %b",f3_m[23,1]);
+
+    
+    __display("r_e = %b",r_e);
+    
+    
+
+    f3 = {f3_s,
+    f3_m[23,1] ? r_e : r_e - 1b1, 
+    f3_m[23,1] ? f3_m[0,23] : {f3_m[0,22],1b0}};
+
 }
 
 
@@ -658,31 +1552,28 @@ algorithm mul_float(
 algorithm main(output uint8 leds){
     uint_to_float to_float;
     float_to_uint to_uint;
-    uint32 u1(127);
-    uint32 u2(1);
+    uint32 u1(1058);
+    uint32 u2(323);
 
     uint32 u3(0);
-    inf_float inf;
-    mul_float mul;
+    float_inf inf;
+    float_mul mul;
+    float_add add;
+    float_div div;
     uint32 f1 = uninitialized;
     uint32 f2 = uninitialized;
     uint32 f3 = uninitialized;
-    uint32 one = 32b00111111100000000000000000000000;
-    uint1 b = uninitialized;
-
     
-    //f1 = 32b00111110101101101000000101100111;
-    //f2 = 32b01000010111111100000000000000000;
     (f1)<-to_float<-(u1);
     ++:
     (f2)<-to_float<-(u2);
     ++:
-    (f3)<-mul<-(f1,f2);
+    (f3)<-div<-(f1,f2);
     ++:
     (u3)<-to_uint<-(f3);
     __display(" %d                  = %b %b %b", u1, f1[31,1], f1[23,8], f1[0,23]);
     __display(" %d                      = %b %b %b",u2, f2[31,1], f2[23,8], f2[0,23]);
-    __display(" %d * %d          = %b %b %b", u1, u2 ,f3[31,1], f3[23,8], f3[0,23]);
+    __display(" %d / %d          = %b %b %b", u1, u2 ,f3[31,1], f3[23,8], f3[0,23]);
     __display(" %d ", u3);
     
 }

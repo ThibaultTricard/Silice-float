@@ -12,16 +12,11 @@ algorithm uint_to_float(input uint$uint_size$ u, output uint$float_size$ f){
             $$size=math.min(ending,mantissa_size)
             $$start=(ending-size)
             $$padding=math.max(mantissa_size-size,0)
-            __display("u : %b", u);
-            __display("size : %d", $size$);
-            __display("start : %d", $start$);
-            __display("padding : %d", $padding$);
             $$if padding==0 then
             mantissa = u[$start$,$size$];
             $$else
             mantissa = {u[$start$,$size$], $mantissa_size-i$d0};
             $$end
-            __display("mantissa %b", mantissa);
         } else {
     $$end
         if(u[0,1]){

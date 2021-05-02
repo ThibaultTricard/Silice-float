@@ -5,7 +5,7 @@ $include('float_comparison.ice')
 
 //no subtract operation, to substract invert the sign bit of the secong float
 
-algorithm add_float(input uint$float_size$ f1, input uint$float_size$ f2, output uint$float_size$ res){
+algorithm float_add(input uint$float_size$ f1, input uint$float_size$ f2, output uint$float_size$ res){
     uint$mantissa_size * 2+2$ max_mantissa(0);
     uint$mantissa_size * 2+2$ min_mantissa(0);
 
@@ -15,7 +15,7 @@ algorithm add_float(input uint$float_size$ f1, input uint$float_size$ f2, output
 
     uint$exponant_size$ dif_exponent(0);
     uint1 f1_inf_f2 (0);
-    inf_float inf;
+    float_inf inf;
     (f1_inf_f2)<-inf<-({1b0,f1[0, $float_size - 1$]},{1b0,f2[0, $float_size - 1$]}); 
 
     dif_exponent = (f1_inf_f2)?
