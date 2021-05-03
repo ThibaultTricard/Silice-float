@@ -26,12 +26,12 @@ algorithm main(output uint8 leds){
     ++:
     (f2)<-to_float<-(u2);
     ++:
-    (f3)<-div<-(f1,f2);
+    (f3)<-mul<-(f1,f2);
     ++:
     (u3)<-to_uint<-(f3);
     __display(" %d                  = %b %b %b", u1, f1[$float_size-1$,1], f1[$mantissa_size$,$exponant_size$], f1[0,$mantissa_size$]);
     __display(" %d                      = %b %b %b",u2, f2[$float_size-1$,1], f2[$mantissa_size$,$exponant_size$], f2[0,$mantissa_size$]);
-    __display(" %d / %d          = %b %b %b", u1, u2 ,f3[$float_size-1$,1], f3[$mantissa_size$,$exponant_size$], f3[0,$mantissa_size$]);
+    __display(" %d * %d          = %b %b %b", u1, u2 ,f3[$float_size-1$,1], f3[$mantissa_size$,$exponant_size$], f3[0,$mantissa_size$]);
     __display(" %d ", u3);
     
 }

@@ -11,12 +11,13 @@ algorithm float_div(input uint$float_size$ f1,  input uint$float_size$ f2, outpu
     int$exponant_size+1$ f3_e(0);
     uint$exponant_size$ r_e(0);
 
-    uint$mantissa_size + 1 + mantissa_size$ f1_m(0); 
-    uint$mantissa_size + 1 + mantissa_size$ f3_m(0); 
-    uint$mantissa_size + 1 + mantissa_size$ remain(0);
+    uint$mantissa_size*2 + 2$ f1_m(0); 
+    uint$mantissa_size*2 + 2$ f3_m(0); 
+    uint$mantissa_size*2 + 2$ remain(0);
 
-$$for i=0,mantissa_size do
-    uint$mantissa_size + 1 + mantissa_size$ f2_m$i$ = uninitialized;
+// +1 to fix loss of one bit of precision in the mantissa 
+$$for i=0,mantissa_size+1 do
+    uint$mantissa_size*2 + 2$ f2_m$i$ = uninitialized;
 $$end
 
     uint$exponant_size$ bias        <: ~{1b1, $exponant_size-1$b0};
@@ -30,41 +31,31 @@ $$end
 
     f3_e = (f1_e - f2_e) + bias;
     r_e = f3_e[0, $exponant_size$];
-    __display("exponent = %b",f3_e);
 
     //mantissa
-    f1_m = {1b1, f1[0, $mantissa_size$], $mantissa_size$b0};
+    f1_m = {1b1, f1[0, $mantissa_size$], $mantissa_size+1$b0};
 
-
-$$for i=0,mantissa_size do
+// +1 to fix loss of one bit of precision in the mantissa 
+$$for i=0,mantissa_size+1 do 
     f2_m$i$ = {1b1, f2[0, $mantissa_size$]} << $i$;
 $$end
 
     remain = f1_m;
+    __display("f1 %b", remain);
+    __display("f2 %b", f2_m$mantissa_size+1$);
+$$for i=mantissa_size+1,0,-1 do
     ++:
-$$for i=mantissa_size,0,-1 do
     if(remain >= f2_m$i$){
         remain = remain - f2_m$i$;
-        f3_m = f3_m + (1 << $i$); // + $mantissa_size$
+        f3_m = f3_m + (1 << $i$); 
     }
-    ++:
 $$end
-
-    __display("remain = %b",remain);
-    __display("f3_m = %b",f3_m);
-    __display("f3_m = %b",f3_m[0,$mantissa_size$]);
-
-    __display("r_e = %b",r_e);
-    __display("carry = %b",f3_m[$mantissa_size$,1]);
-
+    __display("f3 %b", f3_m);
+    __display("f3 %b", f3_m[0,$mantissa_size+3$]);
     
-    __display("r_e = %b",r_e);
-    
-    
-
     f3 = {f3_s,
-    f3_m[$mantissa_size$,1] ? r_e : r_e - 1b1, 
-    f3_m[$mantissa_size$,1] ? f3_m[0,$mantissa_size$] : {f3_m[0,$mantissa_size-1$],1b0}};
+    f3_m[$mantissa_size+1$,1] ? r_e : r_e - 1b1, 
+    f3_m[$mantissa_size+1$,1] ? f3_m[1,$mantissa_size$] : f3_m[0,$mantissa_size$]};
 
 }
 

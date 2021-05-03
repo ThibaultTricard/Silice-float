@@ -6,8 +6,8 @@ algorithm float_mul(
     input uint$float_size$ f2, 
     output uint$float_size$ res)
 {
-    uint$exponant_size$ e1          <: f1[$mantissa_size$, $exponant_size$];
-    uint$exponant_size$ e2          <: f2[$mantissa_size$, $exponant_size$];
+    int$exponant_size+1$ e1         <: f1[$mantissa_size$, $exponant_size$];
+    int$exponant_size+1$ e2         <: f2[$mantissa_size$, $exponant_size$];
     uint$mantissa_size +1$ m1       <: {1b1, f1[0, $mantissa_size$]};
     uint$mantissa_size +1$ m2       <: {1b1, f2[0, $mantissa_size$]};
     uint$exponant_size$ one_inv     <: {1b1, $exponant_size-1$b0};
@@ -30,22 +30,8 @@ $$end
     
     r_m = tmp[$mantissa_size*2 +1$,1] ? tmp[$mantissa_size+1$, $mantissa_size$] : tmp[$mantissa_size$, $mantissa_size$];
 
-    if((e1[$exponant_size-1$,1] && e2[$exponant_size-1$,1]) | ~e1 == one_inv | ~e2 == one_inv){
-        r_e = (e1-bias) + (e2-bias) + bias + tmp[$mantissa_size*2 +1$,1] ;
-    }
-    else{
-        if(e1[$exponant_size-1$,1] && ~e2[$exponant_size-1$,1]){
-            r_e = e1 - (bias-e2) + tmp[$mantissa_size*2 +1$,1];
-        }
-        else{
-            if(~e1[$exponant_size-1$,1] && e2[$exponant_size-1$,1]){
-                r_e = e2 - (bias-e1) + tmp[$mantissa_size*2 +1$,1];
-            }
-            else{ /*~e1[$exponant_size-1$] && ~e2[$exponant_size-1$]*/                
-                r_e = e2 + e1 - bias + tmp[$mantissa_size*2 +1$,1];
-            }
-        }
-    }
+    r_e = (e1-bias) + (e2-bias) + bias + tmp[$mantissa_size*2 +1$,1];
+    
     res = {r_s,r_e,r_m};
 }
 
