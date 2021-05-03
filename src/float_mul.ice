@@ -4,8 +4,10 @@ $$MUL_FLOAT = 1
 algorithm float_mul(
     input uint$float_size$ f1,
     input uint$float_size$ f2, 
-    output uint$float_size$ res)
-{
+    output uint$float_size$ res,
+    output uint1 ready,
+    input  uint1 wr)
+<autorun>{
     int$exponant_size+1$ e1         <: f1[$mantissa_size$, $exponant_size$];
     int$exponant_size+1$ e2         <: f2[$mantissa_size$, $exponant_size$];
     uint$mantissa_size +1$ m1       <: {1b1, f1[0, $mantissa_size$]};
@@ -22,17 +24,23 @@ algorithm float_mul(
 $$for i=1,mantissa_size do
     uint$(mantissa_size +1)*2$ r_$i$ <: m2[$i$,1] ? {$mantissa_size +1-i$b0,m1,$i$b0} : $(mantissa_size +1)*2$b0;
 $$end
-    tmp = 
-$$for i=0,mantissa_size-1 do
-        r_$i$+
-$$end
-        r_$mantissa_size$;
-    
-    r_m = tmp[$mantissa_size*2 +1$,1] ? tmp[$mantissa_size+1$, $mantissa_size$] : tmp[$mantissa_size$, $mantissa_size$];
+    uint$float_size$  tmp_res  = 0;
+    always{
+        if(wr){
+            tmp = 
+        $$for i=0,mantissa_size-1 do
+            r_$i$+
+        $$end
+            r_$mantissa_size$;
 
-    r_e = (e1-bias) + (e2-bias) + bias + tmp[$mantissa_size*2 +1$,1];
-    
-    res = {r_s,r_e,r_m};
+            r_m = tmp[$mantissa_size*2 +1$,1] ? tmp[$mantissa_size+1$, $mantissa_size$] : tmp[$mantissa_size$, $mantissa_size$];
+            r_e = (e1-bias) + (e2-bias) + bias + tmp[$mantissa_size*2 +1$,1];
+
+            tmp_res = {r_s,r_e,r_m};
+            ready = 1;
+        }  
+        res =  tmp_res;
+    }
 }
 
 $$end
