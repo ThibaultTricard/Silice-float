@@ -41,8 +41,6 @@ $$for i=0,mantissa_size+1 do
 $$end
 
     remain = f1_m;
-    __display("f1 %b", remain);
-    __display("f2 %b", f2_m$mantissa_size+1$);
 $$for i=mantissa_size+1,0,-1 do
     ++:
     if(remain >= f2_m$i$){
@@ -50,9 +48,6 @@ $$for i=mantissa_size+1,0,-1 do
         f3_m = f3_m + (1 << $i$); 
     }
 $$end
-    __display("f3 %b", f3_m);
-    __display("f3 %b", f3_m[0,$mantissa_size+3$]);
-    
     f3 = {f3_s,
     f3_m[$mantissa_size+1$,1] ? r_e : r_e - 1b1, 
     f3_m[$mantissa_size+1$,1] ? f3_m[1,$mantissa_size$] : f3_m[0,$mantissa_size$]};
