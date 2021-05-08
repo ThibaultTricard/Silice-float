@@ -10,7 +10,6 @@ algorithm int_to_float(input int$int_size$ i,
     uint1 s <: i[$int_size-1$,1];
     uint$exponant_size$ exponant = 0;
     uint$mantissa_size$ mantissa = 0;
-    uint$float_size$  tmp_res  = 0;
     always{
         if(wr){
             $$for i=int_size-1,1,-1 do
@@ -34,10 +33,9 @@ algorithm int_to_float(input int$int_size$ i,
             $$for i=0,uint_size-2 do
                 }
             $$end
-            tmp_res = {s, exponant, mantissa};
+            res = {s, exponant, mantissa};
             ready = 1;
         }
-        res = tmp_res;
     }
 }
 
@@ -50,7 +48,6 @@ algorithm float_to_int(
     uint$exponant_size$ one_exponent <: {1b1,$exponant_size-1$b0};
     uint$exponant_size$ exponant <: f[$mantissa_size$, $exponant_size$] + 1;
     uint$int_size$  u = 0;
-    uint$int_size$  tmp_res  = 0;
     always{
         if(wr){
             if(f[$float_size-1$, 1] ){
@@ -78,10 +75,9 @@ algorithm float_to_int(
                     }
                 }
             }
-            tmp_res = f[$float_size-1$,1] ? (~u)+1 : u;
+            res = f[$float_size-1$,1] ? (~u)+1 : u;
             ready = 1;
         }
-        res = tmp_res;
     }
     
 }

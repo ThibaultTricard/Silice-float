@@ -10,7 +10,7 @@ algorithm float_div(input  uint$float_size$ f1,
                     input  uint1 wr) 
 <autorun>{
     uint1 f3_s(0);
-    int$exponant_size+1$ f1_e(0); //<: f1[$mantissa_size$, $exponant_size$];
+    int$exponant_size+1$ f1_e(0); 
     int$exponant_size+1$ f2_e(0);
     int$exponant_size+1$ f3_e(0);
     uint$exponant_size$ r_e(0);
