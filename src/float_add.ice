@@ -56,7 +56,7 @@ algorithm float_add(input uint$float_size$ f1,
             if(f1[$float_size-1$,1]==f2[$float_size-1$,1]){  
                 sum_mantissa = max_mantissa + min_mantissa;
                 if(sum_mantissa[$mantissa_size * 2+1$,1]){
-                    tmp_res ={f1[$float_size-1$,1], max_exponant+1, sum_mantissa[$mantissa_size+1$,$mantissa_size$]};
+                    tmp_res ={f1[$float_size-1$,1], max_exponant+1b1, sum_mantissa[$mantissa_size+1$,$mantissa_size$]};
                 }else{
                     tmp_res ={f1[$float_size-1$,1], max_exponant, sum_mantissa[$mantissa_size$,$mantissa_size$]};
                 }

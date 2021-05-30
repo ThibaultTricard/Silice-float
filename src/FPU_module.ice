@@ -68,7 +68,6 @@ algorithm FPU_module(
                 case 5 : {
                     busy = 1;
                     f2i.wr = 1;
-                    __display("f2i launched : %d", in1);
                 }
                 default :{
 
@@ -112,7 +111,6 @@ algorithm FPU_module(
                             res = r_f;
                             i2f.wr = 0;
                             busy = 0;
-                            __display("i2f ready : %b", res);
                         }
                     }
                     case 5 : {

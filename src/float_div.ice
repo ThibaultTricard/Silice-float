@@ -40,7 +40,7 @@ $$end
 
             //mantissa
             f1_m = {1b1, f1[0, $mantissa_size$], $mantissa_size+1$b0};
-
+            f3_m = 0;
             // +1 to fix loss of one bit of precision in the mantissa 
             $$for i=0,mantissa_size+1 do 
                 f2_m$i$ = {1b1, f2[0, $mantissa_size$]} << $i$;
@@ -54,7 +54,6 @@ $$end
                     f3_m = f3_m + (1 << $i$); 
                 }
             $$end
-
             res = {f3_s,
             f3_m[$mantissa_size+1$,1] ? r_e : r_e - 1b1, 
             f3_m[$mantissa_size+1$,1] ? f3_m[1,$mantissa_size$] : f3_m[0,$mantissa_size$]};

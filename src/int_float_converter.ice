@@ -12,6 +12,7 @@ algorithm int_to_float(input int$int_size$ i,
     uint$mantissa_size$ mantissa = 0;
     always{
         if(wr){
+            uint1 rounding_up(0);
             $$for i=int_size-1,1,-1 do
                 if(u[$i$,1]){
                     exponant = {1b1, $exponant_size-1$d$i$} -1;
@@ -19,11 +20,16 @@ algorithm int_to_float(input int$int_size$ i,
                     $$size=math.min(ending,mantissa_size)
                     $$start=(ending-size)
                     $$padding=math.max(mantissa_size-size,0)
-                    $$if padding==0 then
-                    mantissa = u[$start$,$size$];
-                    $$else
-                    mantissa = {u[$start$,$size$], $mantissa_size-i$d0};
+                    $$if start > 0 then
+                        rounding_up = u[$start-1$,1];
                     $$end
+                    $$if padding==0 then
+                    mantissa = u[$start$,$size$] + rounding_up;
+                    $$else
+                    mantissa = {u[$start$,$size$], $mantissa_size-i$d0} + rounding_up;
+                    $$end
+
+                    
                 } else {
             $$end
                 if(u[0,1]){
