@@ -14,7 +14,7 @@ algorithm float_div(input  uint$float_size$ f1,
     int$exponant_size+1$ f2_e(0);
     int$exponant_size+1$ f3_e(0);
     uint$exponant_size$ r_e(0);
-
+    uint$mantissa_size+1$ r_m(0);
     uint$mantissa_size*2 + 2$ f1_m(0); 
     uint$mantissa_size*2 + 2$ f3_m(0); 
     uint$mantissa_size*2 + 2$ remain(0);
@@ -54,9 +54,16 @@ $$end
                     f3_m = f3_m + (1 << $i$); 
                 }
             $$end
+/*          __display("remain  : %b", remain);
+            __display("shifted : %b", (f2_m0 >>1));*/
+            if(remain > (f2_m0 >>1) ){
+                r_m = (f3_m[$mantissa_size+1$,1] ? f3_m[1,$mantissa_size$] : f3_m[0,$mantissa_size$]) +1b1;
+            }else{
+                r_m = (f3_m[$mantissa_size+1$,1] ? f3_m[1,$mantissa_size$] : f3_m[0,$mantissa_size$]);
+            }
             res = {f3_s,
             f3_m[$mantissa_size+1$,1] ? r_e : r_e - 1b1, 
-            f3_m[$mantissa_size+1$,1] ? f3_m[1,$mantissa_size$] : f3_m[0,$mantissa_size$]};
+            r_m[0,$mantissa_size$]};
 
             ready = 1;
         }
