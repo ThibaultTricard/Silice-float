@@ -1,5 +1,6 @@
 # Silice-float32
-Customizable floating point number lib for the Silice FPGA language
+Customizable floating point number lib for the [Silice FPGA language](https://github.com/sylefeb/Silice)
+
 Using the Silice Draft branch
 
 # Features
