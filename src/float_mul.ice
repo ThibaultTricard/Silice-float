@@ -20,11 +20,13 @@ algorithm float_mul(
     uint$exponant_size$ r_e(0);
     
     //mantissa multiplication setup
-    uint$(mantissa_size +1)*2$ tmp(0);
-    uint$(mantissa_size +1)*2$ r_0 <: m2[0,1] ? {$mantissa_size +1$b0,m1} : $(mantissa_size +1)*2$b0;
+    uint$(mantissa_size +2)$ tmp(0);
+    uint$(mantissa_size +1)$ r_0 <: m2[$mantissa_size$,1] ? m1 : $(mantissa_size +1)$b0;
 $$for i=1,mantissa_size do
-    uint$(mantissa_size +1)*2$ r_$i$ <: m2[$i$,1] ? {$mantissa_size +1-i$b0,m1,$i$b0} : $(mantissa_size +1)*2$b0;
+    uint$(mantissa_size +1)$ r_$i$ <: m2[$mantissa_size-i$,1] ? m1 >> $i$ : $(mantissa_size +1)$b0;
 $$end
+
+
     always{
         if(wr){
             // multiplication of both mantissa
@@ -36,10 +38,10 @@ $$end
 
             //then we take 23 bits before the first bit to 1 as the result mantissa
             //the first bit to one can either be the strongest or the one before that
-            r_m = tmp[$mantissa_size*2 +1$,1] ? 
-                        tmp[$mantissa_size+1$, $mantissa_size$] : 
-                        tmp[$mantissa_size$, $mantissa_size$];
-            r_e = (e1-bias) + (e2-bias) + bias + tmp[$mantissa_size*2 +1$,1];
+            r_m = tmp[$mantissa_size +1$,1] ? 
+                        tmp[$1$, $mantissa_size$] : 
+                        tmp[$0$, $mantissa_size$];
+            r_e = (e1-bias) + (e2-bias) + bias + tmp[$mantissa_size +1$,1];
 
             res = {r_s,r_e,r_m};
             ready = 1;
